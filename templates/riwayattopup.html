@@ -1,0 +1,35 @@
+{% extends 'riwayat.html' %}
+{% block head %}
+<title>RIWAYAT TOP UP</title>
+{% endblock %} 
+{% block body %}
+<h1>RIWAYAT TOP UP</h1>
+<div class="mb-3"></div>
+<a href="/home" class="btn btn-primary">HOME</a>
+<a href="/logout" class="btn btn-primary">Logout</a>
+<!-- tabel Bootstrap -->
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">USER ID</th>
+      <th scope="col">ID GAME</th>
+      <th scope="col">NO TELP</th>
+      <th scope="col">PAKET DIAMOND</th>
+      <th scope="col">METHODE PAYMENT</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- looping baris data -->
+    {% for row in data %}
+    <tr>
+      <th scope="row">{{ row.0 }}</th>
+      <td>{{ row.1 }}</td>
+      <td>{{ row.2 }}</td>
+      <td>{{ row.3 }}</td>
+      <td>{{ row.4 }}</td>
+
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endblock %}
